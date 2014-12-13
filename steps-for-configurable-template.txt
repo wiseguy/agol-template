@@ -1,0 +1,119 @@
+1. Create Web Maps (for every app instance)
+2. Build your app. Have your URL for the app ready (without the webmap in the querystring)
+3. Create a new Group (this is just one time)
+	Click on Groups on the top menu
+	Create Group
+	Go to http://blueraster.maps.arcgis.com/home/groups.html
+4. Make the group the default for publishing apps (this is just one time)
+	go to My Organization
+	Edit Settings
+	Map
+	Change the Web App Template to to the newly created Group
+	Click Save
+5. Add your app as a template in ArcGIS Online (this is just one time)
+	Add Application (http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B)
+	Select - Web Application
+	Select - Configurable
+6. Register App (http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#REG_APP)
+	Generates App ID. Collects usage statistics
+	App Type : Browser
+	Redirect URI : Required. Give the Apps URL 
+7. Edit the App
+	Click Edit
+	Apply Configurable template using example in the docs (also at the bottom of this page)
+	(http://doc.arcgis.com/en/arcgis-online/create-maps/configurable-templates.htm)
+	Then hit save
+8. Share app with the Group created in step 3
+9. Open web map created in step 1, and Share
+	make a web application
+
+
+
+============
+Select which layers are turned on/turned off by default
+Which layers to perform analysis on
+
+
+
+
+==============================================
+With Layer options
+	{
+    "configurationSettings": [
+        {
+            "category": "General Settings",
+            "fields": [
+            	
+            	{
+					"type": "layerAndFieldSelector",
+					"fieldOptions":{ 
+						"supportedTypes": ["string"], 
+						"multipleSelection": true,
+					},
+					"layerOptions":{
+						"supportedTypes": ["MapServiceLayer","ImageServiceLayer", "FeatureLayer"]					
+					},
+					"fieldName": "selectedLayerAndFields",
+					"label": "Select a layer."
+				},
+
+
+                {
+                    "type": "options",
+                    "fieldName": "theme",
+                    "tooltip": "Color theme to use",
+                    "label": "Color Scheme:",
+                    "options": [
+                        {
+                            "label": "Blue",
+                            "value": "blue"
+                        },
+                        {
+                            "label": "Green",
+                            "value": "green"
+                        },
+                        {
+                            "label": "Orange",
+                            "value": "orange"
+                        }
+                    ]
+                },
+                {
+                    "type": "string",
+                    "fieldName": "layer",
+                    "label": "Analysis Layer",
+                    "tooltip": "Feature Layer with Facilities to search"
+                },
+                {
+                    "type": "string",
+                    "fieldName": "orgname",
+                    "label": "Organization Name:",
+                    "tooltip": "",
+                    "stringFieldOption": "richtext",
+                    "placeHolder": "Organization Name"
+                },
+                {
+                    "type": "number",
+                    "fieldName": "bufferdistance",
+                    "label": "Search Distance (miles)",
+                    "value": "1"
+                }
+            ]
+        }
+    ],
+    "values": {
+        "theme": "orange",
+        "bufferdistance": 1,
+        "selectedLayerAndFields":{
+        	"layerId": "GAB_online_en - Protected areas",
+			"fields": ["nom_ap"]	
+        }
+    }
+}
+
+
+========================
+Default
+
+{"configurationSettings":[{"category":"General Settings","fields":[{"type":"options","fieldName":"theme","tooltip":"Color theme to use","label":"Color Scheme:","options":[{"label":"Blue","value":"blue"},{"label":"Green","value":"green"},{"label":"Orange","value":"orange"}]},{"type":"string","fieldName":"layer","label":"Analysis Layer","tooltip":"Feature Layer with Facilities to search"},{"type":"string","fieldName":"orgname","label":"Organization Name:","tooltip":"","stringFieldOption":"richtext","placeHolder":"Organization Name"},{"type":"number","fieldName":"bufferdistance","label":"Search Distance (miles)","value":"1"}]}],"values":{"theme":"orange","bufferdistance":1}}
+

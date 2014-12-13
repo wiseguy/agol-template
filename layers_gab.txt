@@ -1,0 +1,6 @@
+http://gis-forest-atlas.wri.org/arcgis/rest/services/GAB/GAB_online_en/MapServer/0
+http://gis-forest-atlas.wri.org/arcgis/rest/services/GAB/GAB_online_en/MapServer/1
+http://gis-forest-atlas.wri.org/arcgis/rest/services/GAB/GAB_online_en/MapServer/2
+http://gis-forest-atlas.wri.org/arcgis/rest/services/GAB/GAB_online_en/MapServer/3
+http://gis-forest-atlas.wri.org/arcgis/rest/services/GAB/GAB_online_en/MapServer/4
+http://gis-forest-atlas.wri.org/arcgis/rest/services/GAB/GAB_online_en/MapServer/5
